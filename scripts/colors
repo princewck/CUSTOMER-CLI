@@ -1,0 +1,11 @@
+const colors = require('colors');
+
+console.log('hello!'.red);
+console.log('hello'.green.bold.inverse);
+console.log('rainbow'.rainbow);
+console.log('Tapas'.trap.rainbow);
+
+setInterval(() => {
+  console.clear();
+  console.log('ForntEnd Development!'.trap.rainbow);
+}, 100);

@@ -1,0 +1,22 @@
+const requiredAge = 18;
+
+process.stdout.write('请输入你的年龄：');
+process.stdin.setEncoding('utf8');
+
+process.stdin.on('data', data => {
+  const age = parseInt(data, 10);
+  if (isNaN(age)) {
+    console.log('%s is not a valid number', data);
+  } else if (age < requiredAge) {
+    console.log('你必须年满 %d 周岁才可以查看内容，' +
+      '%d 年后再来吧！',
+      requiredAge,
+      requiredAge - age
+    );
+  } else {
+    console.log('欢迎使用！！！');
+  }
+  process.stdin.pause();
+});
+
+process.stdin.resume();

@@ -1,0 +1,32 @@
+const gradient = require('gradient-string');
+console.log(gradient('cyan', 'pink')('Hello world!'));
+
+// Using varargs
+var coolGradient = gradient('red', 'green', 'blue');
+
+// Using array
+var coolGradient = gradient(['#FF0000', '#00FF00', '#0000FF']);
+
+
+var coolGradient = gradient([
+  {r: 0, g: 255, b: 0},       // RGB object
+  {h: 240, s: 1, v: 1, a: 1}, // HSVa object
+  'rgb(120, 120, 0)',         // RGB CSS string
+  'gold'                      // named color
+]);
+
+
+const from = {
+  r: 0,
+  g: 125,
+  b: 200,
+}
+
+const to = {
+  r: 255,
+  g: 0,
+  b: 100,
+}
+
+const chalkAnimation = require('chalk-animation');
+chalkAnimation.rainbow('Lorem ipsum dolor sit amet');
