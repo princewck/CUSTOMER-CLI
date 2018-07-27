@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 const program = require('commander');
-const { 
-  addCustomer, 
-  findCustomer, 
+const {
+  addCustomer,
+  findCustomer,
   updateCustomer,
   removerCustomer,
   listCustomers,
@@ -59,13 +59,12 @@ program
 program
 // .command('update <_id>')
 .command('update')
-.parseExpectedArgs(['<_id>', '<_name>'])
+.parseExpectedArgs(['<_id>'])
 .alias('u')
 .description('update a customer')
 .option('-l,--loglevel <level>', '设定日志级别')
 .usage(' <id> -l DEBUG')
-.action(((_id, _name, {loglevel}) => {
-  console.log(_id, _name, loglevel);
+.action(((_id, _name) => {
   prompt(questions).then(answers => updateCustomer(_id, answers));
 }));
 

@@ -15,9 +15,11 @@
     "ansi": "^0.3.1",
     "chalk-animation": "^1.6.0",
     "commander": "^2.16.0",
+    "console.table": "^0.10.0",
     "http": "0.0.0",
     "inquirer": "^6.0.0",
     "konsole": "^2.2.0",
+    "konsole.table": "^0.1.1",
     "mongoose": "^4.13.14",
     "url": "^0.11.0"
   },

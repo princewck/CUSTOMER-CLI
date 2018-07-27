@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Customer = require('./models/customer');
 const program = require('commander');
+require('./utils/console.table');
 
 mongoose.Promise = global.Promise;
 
@@ -20,10 +21,10 @@ const addCustomer = (customer) => {
 const findCustomer = (name) => {
   const search = new RegExp(name, 'i');
   Customer.find({$or: [
-    {firstname: search}, 
+    {firstname: search},
     {lastname: search},
   ]}).then(customer => {
-    console.table(resultParser(customer));
+    console._table(resultParser(customer));
     console.info(`${customer.length} matches!`);
     db.close();
   });
@@ -49,7 +50,7 @@ const removerCustomer = (_id) => {
 const listCustomers = () => {
   Customer.find()
     .then(customers => {
-      console.table(resultParser(customers));
+      console._table(resultParser(customers));
       console.info(`${customers.length} matches!`);
       db.close();
     })
