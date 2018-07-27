@@ -22,15 +22,15 @@
 
   > 什么是环境变量：它是一组键值对，进程可以使用它们来调整自己的行为。e.g 所有操作系统都定义了一个文件路径清单的环境变量PATH，用来根据名称搜索程序的位置（比如ls被解析为/bin/bash）
 
-  ``` 
+  ```
   # 命令行指定要启动的进程中env对象属性
-  
+
   $ NODE_ENV=production node
   # or
   $ env NODE_ENV=production node
   ```
 
-- fs 模块： 
+- fs 模块：
 
   fs模块提供了跟文件系统交互的函数，其中大部分都有一一对应的C函数，几乎所有底层函数的用法都和C函数用法一样，比如fs.stat() 和 fs.statSync() 是C 函数stat()的底层绑定。
 
@@ -308,7 +308,7 @@ console.log("this is an error".error);
   ```javascript
   var ansi = require('ansi')
     , cursor = ansi(process.stdout)
-  
+
   // You can chain your calls forever:
   cursor
     .red()                 // Set font color to red
@@ -317,28 +317,28 @@ console.log("this is an error".error);
     .bg.reset()            // Reset the bgcolor before writing the trailing \n,
                            //      to avoid Terminal glitches
     .write('\n')           // And a final \n to wrap things up
-  
+
   // Rendering modes are persistent:
   cursor.hex('#660000').bold().underline()
-  
+
   // You can use the regular logging functions, text will be green:
   console.log('This is blood red, bold text')
-  
+
   // To reset just the foreground color:
   cursor.fg.reset()
-  
+
   console.log('This will still be bold')
-  
+
   // to go to a location (x,y) on the console
   // note: 1-indexed, not 0-indexed:
   cursor.goto(10, 5).write('Five down, ten over')
-  
+
   // to clear the current line:
   cursor.horizontalAbsolute(0).eraseLine().write('Starting again')
-  
+
   // to go to a different column on the current line:
   cursor.horizontalAbsolute(5).write('column five')
-  
+
   // Clean up after yourself!
   cursor.reset()
   ```
@@ -407,7 +407,7 @@ chalk.bgRgb(15, 100, 204).inverse('Hello!')
 
 ### 5. 发布和安装
 
-- /usr/bin/env 
+- /usr/bin/env
 
   > ! /usr/local/bin/node  和 /usr/bin/env node 的区别 ？
 
@@ -434,7 +434,7 @@ up to date in 1.195s
 - fstream https://github.com/npm/fstream
 - fs-extra https://github.com/jprichardson/node-fs-extra
 - shelljs https://github.com/shelljs/shelljs
-- 
+- ora https://github.com/sindresorhus/ora
 
 > 参考
 >
